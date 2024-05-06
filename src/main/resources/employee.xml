@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Department -->
+    <bean id="departmentBean" class="com.cognizant.springlearn.bean.Department">
+        <property name="id" value="1" />
+        <property name="name" value="Payroll" />
+    </bean>
+    
+    <!-- All Skill Beans -->
+    
+    <bean id="skillHtml" class="com.cognizant.springlearn.bean.Skill">
+    	<property name="id" value="1"/>
+    	<property name="name" value="HTML"/>
+    </bean>
+    <bean id="skillCss" class="com.cognizant.springlearn.bean.Skill">
+    	<property name="id" value="2"/>
+    	<property name="name" value="CSS"/>
+    </bean>
+    <bean id="skillJs" class="com.cognizant.springlearn.bean.Skill">
+    	<property name="id" value="3"/>
+    	<property name="name" value="JS"/>
+    </bean>
+   
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+    	<constructor-arg value="yyyy-MM-dd"/>
+    </bean>
+    
+    <!-- Employee -->
+    <bean id="employee" class="com.cognizant.springlearn.bean.Employee">
+        
+        <property name="id" value="1001"/>	
+        <property name="name" value="john"/>
+        <property name="salary" value="35000.0"/>     
+        <property name="permanent" value="true"/>
+
+          <property name="dateOfBirth">
+        	<bean factory-bean="dateFormat" factory-method="parse">
+        		<constructor-arg value="1995-12-12"/>
+        	</bean>
+        </property>
+        
+        <property name="department" ref="departmentBean" />
+        
+        <property name="skills">
+        	<array>
+        		<ref bean="skillHtml"/>
+        		<ref bean="skillCss"/>
+        		<ref bean="skillJs"/>
+        	</array>
+        </property>
+        
+    </bean>
+
+
+</beans>

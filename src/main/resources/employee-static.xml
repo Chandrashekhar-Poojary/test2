@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- employees.xml -->
+<employees>
+    <employee>
+        <id>1</id>
+        <name>John Doe</name>
+        <department>IT</department>
+        <skills>
+            <skill>Java</skill>
+            <skill>Spring</skill>
+            <skill>Hibernate</skill>
+        </skills>
+    </employee>
+    <employee>
+        <id>2</id>
+        <name>Jane Smith</name>
+        <department>HR</department>
+        <skills>
+            <skill>Communication</skill>
+            <skill>Recruitment</skill>
+            <skill>Employee Relations</skill>
+        </skills>
+    </employee>
+</employees>
